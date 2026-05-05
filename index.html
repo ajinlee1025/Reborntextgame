@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본고레에서 살아남기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1 id="game-title">본고레에서 살아남기</h1>
+            <span id="game-time">Day 1</span>
+        </header>
+
+        <main id="game-main">
+            <!-- 왼쪽: 텍스트 로그 -->
+            <section id="log-panel">
+                <div id="log-content"></div>
+            </section>
+
+            <!-- 오른쪽: 상태창 + 행동 버튼 -->
+            <aside id="status-panel">
+
+                <div class="panel-section">
+                    <h3 class="section-title">상태</h3>
+                    <div class="stat-row bar-row">
+                        <span class="stat-label">HP</span>
+                        <div class="bar-wrap">
+                            <div class="bar hp-bar" id="hp-bar"></div>
+                        </div>
+                        <span class="stat-val" id="hp-val">100/100</span>
+                    </div>
+                    <div class="stat-row bar-row">
+                        <span class="stat-label">염력</span>
+                        <div class="bar-wrap">
+                            <div class="bar flame-bar" id="flame-bar"></div>
+                        </div>
+                        <span class="stat-val" id="flame-val">0/100</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">식량</span>
+                        <span class="stat-val" id="food-val">5</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">돈</span>
+                        <span class="stat-val" id="money-val">0 유로</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">스킬</h3>
+                    <div class="stat-row"><span class="stat-label">전투</span><span class="stat-val skill-val" id="sk-combat">0</span></div>
+                    <div class="stat-row"><span class="stat-label">은신</span><span class="stat-val skill-val" id="sk-stealth">0</span></div>
+                    <div class="stat-row"><span class="stat-label">교섭</span><span class="stat-val skill-val" id="sk-nego">0</span></div>
+                    <div class="stat-row"><span class="stat-label">화염</span><span class="stat-val skill-val" id="sk-flame">0</span></div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">세력 관계</h3>
+                    <div class="rep-row">
+                        <span class="rep-label vongola">본고레</span>
+                        <div class="rep-track">
+                            <div class="rep-fill" id="rep-vongola" data-faction="vongola"></div>
+                            <div class="rep-center"></div>
+                        </div>
+                    </div>
+                    <div class="rep-row">
+                        <span class="rep-label varia">바리아</span>
+                        <div class="rep-track">
+                            <div class="rep-fill" id="rep-varia" data-faction="varia"></div>
+                            <div class="rep-center"></div>
+                        </div>
+                    </div>
+                    <div class="rep-row">
+                        <span class="rep-label millefiore">밀피오레</span>
+                        <div class="rep-track">
+                            <div class="rep-fill" id="rep-millefiore" data-faction="millefiore"></div>
+                            <div class="rep-center"></div>
+                        </div>
+                    </div>
+                    <div class="rep-row">
+                        <span class="rep-label kokuyo">고쿠요</span>
+                        <div class="rep-track">
+                            <div class="rep-fill" id="rep-kokuyo" data-faction="kokuyo"></div>
+                            <div class="rep-center"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">행동</h3>
+                    <div id="action-buttons"></div>
+                </div>
+
+                <div id="save-section">
+                    <button class="sys-btn" id="save-btn">저장</button>
+                    <button class="sys-btn" id="load-btn">불러오기</button>
+                    <button class="sys-btn danger" id="reset-btn">초기화</button>
+                </div>
+
+            </aside>
+        </main>
+    </div>
+
+    <!-- 이벤트 모달 -->
+    <div id="event-modal" class="hidden">
+        <div id="modal-box">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="events.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
